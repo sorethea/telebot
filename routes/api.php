@@ -23,7 +23,7 @@ Route::post('bot/send', function (int $chatId, string $text){
 });
 
 Route::post('bot/webhook', function (int $chatId, string $text){
-    return Telegram::setWebhook(['url' => 'https://pos.hieatapps.com/api/{token}/webhook']);
+    return Telegram::setWebhook([]);
 });
 
 Route::post('/<token>/webhook', function () {
