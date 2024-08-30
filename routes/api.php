@@ -26,7 +26,7 @@ Route::post('bot/webhook', function (int $chatId, string $text){
     return Telegram::setWebhook([]);
 });
 
-Route::post('/<token>/webhook', function () {
+Route::post('/{token}/webhook', function () {
     $update = Telegram::commandsHandler(true);
     logger(json_encode($update));
     // Commands handler method returns the Update object.

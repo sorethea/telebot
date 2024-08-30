@@ -34,7 +34,7 @@ return [
         'theA' => [
             'token' => env('TELEGRAM_BOT_TOKEN', '7528102206:AAE85TOA57mNaBPPZDdQbjQoCgp7AzqrtQM'),
             'certificate_path' => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
-            'webhook_url' => env('TELEGRAM_WEBHOOK_URL', 'https://pos.hieatapps.com/api/<token>/webhook'),
+            'webhook_url' => env('TELEGRAM_WEBHOOK_URL', 'https://pos.hieatapps.com/api/{token}/webhook'),
             /*
              * @see https://core.telegram.org/bots/api#update
              */
