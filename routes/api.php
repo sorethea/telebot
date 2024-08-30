@@ -14,9 +14,15 @@ Route::post('bot/me', function (){
 Route::post('bot/updates', function (){
     return \Telegram\Bot\Laravel\Facades\Telegram::getUpdates();
 });
+Route::post('bot/send', function (int $chatId, string $text){
+    return \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
+        "chat_id"=>$chatId,
+        "text"=>$text,
+    ]);
+});
 Route::post('/<token>/webhook', function () {
     $update = Telegram::commandsHandler(true);
-
+    logger(json_encode($update));
     // Commands handler method returns the Update object.
     // So you can further process $update object
     // to however you want.
