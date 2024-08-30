@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('chat_id')->nullable();
             $table->string('type')->nullable();
-            $table->tinyText('chat')->nullable();
-            $table->tinyText('message')->nullable();
+            $table->text('chat')->nullable();
+            $table->text('message')->nullable();
             $table->string('reference_id')->nullable();
-            $table->tinyText('response')->nullable();
+            $table->text('response')->nullable();
             $table->timestamps();
         });
     }
