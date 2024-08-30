@@ -20,7 +20,7 @@ class Message extends Model
         "chat_id"=>"string",
         "type"=>"string",
         "message_id"=>"string",
-        "chat"=>"json",
-        "response"=>"json",
+        "chat"=>"array",
+        "response"=>"array",
     ];
 }
