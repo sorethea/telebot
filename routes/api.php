@@ -31,9 +31,9 @@ Route::post('/{token}/webhook', function () {
     $chat = $update->getChat();
     $message = new \App\Models\Message();
     $message->save([
-        "chat_id"=>$chat->id,
+        "chat_id"=>$update->getChatId(),
         "type"=>$update->get("type"),
-        "message_id"=>$update->getMessage()->id,
+        "message"=>$update->getMessage(),
         "chat"=>$chat,
         "response"=>$update,
     ]);

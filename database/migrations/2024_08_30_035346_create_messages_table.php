@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('chat_id')->nullable();
             $table->string('type')->nullable();
-            $table->string('chat')->nullable();
-            $table->string('message_id')->nullable();
+            $table->tinyText('chat')->nullable();
+            $table->tinyText('message')->nullable();
             $table->string('reference_id')->nullable();
             $table->tinyText('response')->nullable();
             $table->timestamps();

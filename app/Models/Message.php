@@ -11,7 +11,7 @@ class Message extends Model
     protected $fillable = [
         "chat_id",
         "type",
-        "message_id",
+        "message",
         "chat",
         "response",
     ];
@@ -19,7 +19,7 @@ class Message extends Model
     protected $casts =[
         "chat_id"=>"string",
         "type"=>"string",
-        "message_id"=>"string",
+        "message"=>"array",
         "chat"=>"array",
         "response"=>"array",
     ];
