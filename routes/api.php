@@ -32,10 +32,9 @@ Route::post('/{token}/webhook', function () {
     $message = new \App\Models\Message();
     $message->save([
         "chat_id"=>$update->getChatId(),
-        "type"=>$update->get("type"),
         "message"=>$update->getMessage(),
         "chat"=>$chat,
-        "response"=>$update,
+        "response"=>json_encode($update),
     ]);
     // Commands handler method returns the Update object.
     // So you can further process $update object
