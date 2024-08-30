@@ -38,12 +38,6 @@ services:
       - ./nginx/nginx.crt:/etc/ssl/certs/nginx.crt
     networks:
       - app-network
-#  node:
-#      image: node:18
-#      container_name: node
-#      working_dir: /var/www
-#      depends_on:
-#          - 'app'
   #MySQL Service
   db:
     image: mysql:5.7
