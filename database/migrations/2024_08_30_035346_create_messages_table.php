@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('chat_id')->nullable();
             $table->string('type')->nullable();
+            $table->string('title')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('reference_id')->nullable();

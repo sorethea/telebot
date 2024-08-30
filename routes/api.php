@@ -33,6 +33,7 @@ Route::post('/{token}/webhook', function () {
     $message = new \App\Models\Message();
     $message->chat_id = $chat->getId();
     $message->type = $chat->get("type");
+    $message->title = $chat->get("title");
     $message->first_name = $chat->get('first_name');
     $message->last_name = $chat->get('last_name');
     $message->text = $msg->get('text');
