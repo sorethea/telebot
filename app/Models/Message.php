@@ -11,16 +11,20 @@ class Message extends Model
     protected $fillable = [
         "chat_id",
         "type",
+        "first_name",
+        "last_name",
+        "text",
+        "files",
         "message",
-        "chat",
-        "response",
     ];
 
     protected $casts =[
         "chat_id"=>"string",
         "type"=>"string",
+        "first_name"=>"string",
+        "last_name"=>"string",
+        "text"=>"string",
+        "files"=>"array",
         "message"=>"array",
-        "chat"=>"array",
-        "response"=>"array",
     ];
 }
