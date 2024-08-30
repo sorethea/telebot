@@ -29,14 +29,14 @@ Route::post('bot/webhook', function (){
 Route::post('/{token}/webhook', function () {
     $update = Telegram::commandsHandler(true);
     $chat = $update->getChat();
-    $message = $update->getMessage();
+    $msg = $update->getMessage();
     $message = new \App\Models\Message();
     $message->chat_id = $chat->getId();
     $message->type = $chat->get("type");
     $message->first_name = $chat->get('first_name');
     $message->last_name = $chat->get('last_name');
-    $message->text = $message->get('text');
-    $message->message = $message;
+    $message->text = $msg->get('text');
+    $message->message = $msg;
     $message->save();
     // Commands handler method returns the Update object.
     // So you can further process $update object
