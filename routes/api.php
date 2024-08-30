@@ -15,11 +15,17 @@ Route::post('bot/updates', function (){
     return \Telegram\Bot\Laravel\Facades\Telegram::getUpdates();
 });
 Route::post('bot/send', function (int $chatId, string $text){
-    \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
+    $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
         "chat_id"=>$chatId,
         "text"=>$text,
     ]);
+    return $response->getMessageId();
 });
+
+Route::post('bot/webhook', function (int $chatId, string $text){
+    return Telegram::setWebhook(['url' => 'https://pos.hieatapps.com/{token}/webhook']);
+});
+
 Route::post('/<token>/webhook', function () {
     $update = Telegram::commandsHandler(true);
     logger(json_encode($update));
