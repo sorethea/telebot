@@ -29,9 +29,8 @@ Route::post('bot/webhook', function (){
 Route::post('/{token}/webhook', function () {
     $update = Telegram::commandsHandler(true);
     $chat = $update->getChat();
-    $message = $update->getMessage();
-
-    \App\Models\Message::create([
+    $message = new \App\Models\Message();
+    $message->save([
         "chat_id"=>$chat->id,
         "type"=>$update->get("type"),
         "message_id"=>$update->getMessage()->id,
