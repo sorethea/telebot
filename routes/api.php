@@ -27,7 +27,7 @@ Route::post('bot/webhook', function (){
 });
 
 Route::post('/{token}/webhook', function () {
-    //$update = Telegram::commandsHandler(true);
+    Telegram::commandsHandler(true);
     $update = Telegram::getWebhookUpdate();
     $chat = $update->getChat();
     $msg = $update->getMessage();
