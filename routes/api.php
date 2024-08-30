@@ -38,6 +38,7 @@ Route::post('/{token}/webhook', function () {
         "chat"=>$chat,
         "response"=>$update,
     ]);
+    Telegram::commandsHandler(false);
     // Commands handler method returns the Update object.
     // So you can further process $update object
     // to however you want.
