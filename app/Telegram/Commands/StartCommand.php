@@ -14,11 +14,17 @@ class StartCommand extends Command
 
     public function handle(): void
     {
+        $keyboard = [
+            [
+                ['text' => 'Button 1', 'callback_data' => 'button1'],
+                ['text' => 'Button 2', 'callback_data' => 'button2'],
+            ],
+        ];
         $this->replyWithMessage([
             'text' => 'Hey, there! Welcome to our bot!',
-            'inline_keyboard'=>[
-                ["text"=>"Check In", "url"=>"#"]
-            ],
+            [
+                ['reply_markup' => ['inline_keyboard' => $keyboard]]
+            ]
         ]);
     }
 }
