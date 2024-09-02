@@ -18,6 +18,6 @@ class StartCommand extends Command
         $this->replyWithMessage([
             'text' => 'Hey, there! Welcome to our bot!',
         ]);
-        logger($this->getTelegram());
+        logger($this->getChatId());
     }
 }
