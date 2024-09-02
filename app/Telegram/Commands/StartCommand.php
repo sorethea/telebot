@@ -5,6 +5,7 @@ namespace App\Telegram\Commands;
 
 
 use Telegram\Bot\Commands\Command;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class StartCommand extends Command
 {
@@ -14,17 +15,9 @@ class StartCommand extends Command
 
     public function handle(): void
     {
-        $keyboard = [
-            [
-                ['text' => 'Button 1', 'callback_data' => 'button1'],
-                ['text' => 'Button 2', 'callback_data' => 'button2'],
-            ],
-        ];
         $this->replyWithMessage([
             'text' => 'Hey, there! Welcome to our bot!',
-            [
-                ['reply_markup' => ['inline_keyboard' => $keyboard]]
-            ]
         ]);
+        logger($this->getTelegram());
     }
 }
