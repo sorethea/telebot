@@ -21,10 +21,8 @@ Route::post('bot/send', function (){
         "text"=>\request()->get('text'),
 //        "disable_web_page_preview"=>true,
 //        "parse_mode" => 'Markdown',
-        "reply_markup"=>[
-            "inline_keyboard"=>[
-                ["text"=>"Option 1", "callback_data"=> "option1"],
-            ]
+        "keyboardButton"=>[
+            "text"=>"Check In"
         ]
     ]);
     return $response->getMessageId();
