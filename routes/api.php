@@ -19,6 +19,7 @@ Route::post('bot/send', function (){
     $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
         "chat_id"=>\request()->get('chat_id'),
         "text"=>\request()->get('text'),
+        "reply_markup"=>\request()->get("replay_markup")
     ]);
     return $response->getMessageId();
 });
