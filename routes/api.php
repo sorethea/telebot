@@ -14,12 +14,14 @@ Route::post('bot/me', function (){
 Route::post('bot/updates', function (){
     return \Telegram\Bot\Laravel\Facades\Telegram::getUpdates();
 });
-Route::post('bot/send', function (int $chatId, string $text){
-    $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
-        "chat_id"=>$chatId,
-        "text"=>$text,
-    ]);
-    return $response->getMessageId();
+Route::post('bot/send', function (\Illuminate\Http\Client\Request $request){
+    $body = $request->body();
+    logger($body);
+//    $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
+//        "chat_id"=>$chatId,
+//        "text"=>$text,
+//    ]);
+    //return $response->getMessageId();
 });
 
 Route::post('bot/webhook', function (){
