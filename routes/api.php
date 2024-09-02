@@ -15,12 +15,12 @@ Route::post('bot/updates', function (){
     return \Telegram\Bot\Laravel\Facades\Telegram::getUpdates();
 });
 Route::post('bot/send', function (){
-    logger(\request()->all());
-//    $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
-//        "chat_id"=>$chatId,
-//        "text"=>$text,
-//    ]);
-    //return $response->getMessageId();
+
+    $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
+        "chat_id"=>\request()->get('chat_id'),
+        "text"=>\request()->get('text'),
+    ]);
+    return $response->getMessageId();
 });
 
 Route::post('bot/webhook', function (){
