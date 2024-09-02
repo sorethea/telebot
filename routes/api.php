@@ -14,9 +14,8 @@ Route::post('bot/me', function (){
 Route::post('bot/updates', function (){
     return \Telegram\Bot\Laravel\Facades\Telegram::getUpdates();
 });
-Route::post('bot/send', function (\Illuminate\Http\Client\Request $request){
-    $body = $request->body();
-    logger($body);
+Route::post('bot/send', function (){
+    logger(\request()->all());
 //    $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
 //        "chat_id"=>$chatId,
 //        "text"=>$text,
