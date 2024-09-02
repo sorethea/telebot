@@ -16,6 +16,9 @@ class StartCommand extends Command
     {
         $this->replyWithMessage([
             'text' => 'Hey, there! Welcome to our bot!',
+            'keyboardButton'=>[
+                "Check In"
+            ],
         ]);
     }
 }
