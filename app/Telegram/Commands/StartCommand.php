@@ -16,7 +16,7 @@ class StartCommand extends Command
     public function handle(): void
     {
         $this->replyWithMessage([
-            'text' => 'Hey, there! Welcome to our bot!',
+            'text' => 'Hey, there! Welcome to our bot! This is aliases: '.json_encode($this->getAliases()),
         ]);
     }
 }
