@@ -48,7 +48,7 @@ Route::post('/{token}/webhook', function () {
             'chat_id'=>$chat->getId(),
             'text'=>'Hi, I am a bot!',
             'reply_markup'=>[
-                'keyboard'=>[
+                'keyboard'=>json_encode([
                     [
                         ['text' => 'Button 1'],
                         ['text' => 'Button 2'],
@@ -56,7 +56,7 @@ Route::post('/{token}/webhook', function () {
                     [
                         ['text' => 'Button 3'],
                     ],
-                ]
+                ])
             ]
         ]);
     }
