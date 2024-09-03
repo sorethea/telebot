@@ -19,9 +19,9 @@ class StartCommand extends Command
             'text' => 'Hey, there! Welcome to our bot!',
             'reply_markup'=>json_encode([
                 'keyboard'=>[
-                    [['text'=>'Subscript', "request_contact"=>true,'border'=>true,'one_time_keyboard'=>true]],
-                    [['text'=>'Check In', "request_location"=>true,'border'=>true]],
-                    [['text'=>'Check Out', "request_location"=>true,'border'=>true]],
+                    [['text'=>'Subscript','callback_data'=>'subscript', "request_contact"=>true,'border'=>true,'one_time_keyboard'=>true]],
+                    [['text'=>'Check In','callback_data'=>'checkin', "request_location"=>true,'border'=>true]],
+                    [['text'=>'Check Out','callback_data'=>'checkout', "request_location"=>true,'border'=>true]],
                 ],
                 'resize_keyboard' => true, // Optional
                 'one_time_keyboard' => false, // Optional
