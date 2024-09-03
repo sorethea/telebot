@@ -49,7 +49,13 @@ Route::post('/{token}/webhook', function () {
             'text'=>'Hi, I am a bot!',
             'reply_markup'=>[
                 'keyboard'=>[
-                    ['text'=>'Check In', 'request_location'=>true]
+                    [
+                        ['text' => 'Button 1'],
+                        ['text' => 'Button 2'],
+                    ],
+                    [
+                        ['text' => 'Button 3'],
+                    ],
                 ]
             ]
         ]);
