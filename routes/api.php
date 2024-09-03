@@ -42,23 +42,23 @@ Route::post('/{token}/webhook', function () {
     $message->message = $msg;
     $message->save();
 
-    if($message->text == '/start'){
-        $bot = Telegram::bot('theA');
-        $bot->sendMessage([
-            'chat_id'=>$chat->getId(),
-            'text'=>'Hi, I am a bot!',
-            'reply_markup'=>json_encode([
-                'keyboard'=>[
-                    [
-                        ['text' => 'Button 1'],
-                        ['text' => 'Button 2'],
-                    ],
-                    [
-                        ['text' => 'Button 3'],
-                    ],
-                ]
-            ])
-        ]);
-    }
+//    if($message->text == '/start'){
+//        $bot = Telegram::bot('theA');
+//        $bot->sendMessage([
+//            'chat_id'=>$chat->getId(),
+//            'text'=>'Hi, I am a bot!',
+//            'reply_markup'=>json_encode([
+//                'keyboard'=>[
+//                    [
+//                        ['text' => 'Button 1'],
+//                        ['text' => 'Button 2'],
+//                    ],
+//                    [
+//                        ['text' => 'Button 3'],
+//                    ],
+//                ]
+//            ])
+//        ]);
+//    }
     return 'ok';
 });

@@ -17,11 +17,11 @@ class StartCommand extends Command
     {
         $this->replyWithMessage([
             'text' => 'Hey, there! Welcome to our bot!',
-//            'reply_markup'=>[
-//                'keyboard'=>[
-//                    ['text'=>'Check In', "request_location"=>true]
-//                ]
-//            ]
+            'reply_markup'=>json_encode([
+                'keyboard'=>[
+                    [['text'=>'Check In', "request_location"=>true,'border'=>true]]
+                ]
+            ])
         ]);
     }
 }
