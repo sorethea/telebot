@@ -41,8 +41,10 @@ Route::post('/{token}/webhook', function () {
     $message->text = $msg->get('text');
     $message->message = $msg;
     $message->save();
+
     if($message->text == '/start'){
-        Telegram::sendMessage([
+        $bot = new \Telegram\Bot\Api(config('telegram.bots.theA.token'));
+        $bot->sendMessage([
             'chat_id'=>$chat->getId(),
             'text'=>'Hi, I am a bot!',
             'reply_markup'=>[
