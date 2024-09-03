@@ -45,10 +45,8 @@ Route::post('/{token}/webhook', function () {
         Telegram::sendMessage([
             'chat_id'=>$chat->getId(),
             'text'=>'Hi, I am a bot!',
-            'replay_markup'=>[
-                'keyboard'=>[
-                    ['text'=>'Check In', 'request_location'=>true]
-                ]
+            'keyboard'=>[
+                ['text'=>'Check In', 'request_location'=>true]
             ]
         ]);
     }
