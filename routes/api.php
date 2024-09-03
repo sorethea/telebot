@@ -19,11 +19,6 @@ Route::post('bot/send', function (){
     $response = \Telegram\Bot\Laravel\Facades\Telegram::sendMessage([
         "chat_id"=>\request()->get('chat_id'),
         "text"=>\request()->get('text'),
-//        "disable_web_page_preview"=>true,
-//        "parse_mode" => 'Markdown',
-        "keyboardButton"=>[
-            "text"=>"Check In"
-        ]
     ]);
     return $response->getMessageId();
 });
@@ -46,5 +41,16 @@ Route::post('/{token}/webhook', function () {
     $message->text = $msg->get('text');
     $message->message = $msg;
     $message->save();
+    if($message->text == '/start'){
+        Telegram::sendMessage([
+            'chat_id'=>$chat->getId(),
+            'text'=>'Hi, I am a bot!',
+            'replay_markup'=>[
+                'keyboard'=>[
+                    ['text'=>'Check In', 'request_location'=>true]
+                ]
+            ]
+        ]);
+    }
     return 'ok';
 });
