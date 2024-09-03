@@ -21,6 +21,7 @@ class StartCommand extends Command
                 'keyboard'=>[
                     [['text'=>'Subscript', "request_contact"=>true,'border'=>true,'one_time_keyboard'=>true]],
                     [['text'=>'Check In', "request_location"=>true,'border'=>true]],
+                    [['text'=>'Check Out', "request_location"=>true,'border'=>true]],
                 ],
                 'resize_keyboard' => true, // Optional
                 'one_time_keyboard' => false, // Optional
