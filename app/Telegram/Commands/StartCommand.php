@@ -20,7 +20,10 @@ class StartCommand extends Command
             'reply_markup'=>json_encode([
                 'keyboard'=>[
                     [['text'=>'Check In', "request_location"=>true,'border'=>true]]
-                ]
+                ],
+                'resize_keyboard' => true, // Optional
+                'one_time_keyboard' => false, // Optional
+                'selective_width' => false, // Optional
             ])
         ]);
     }
